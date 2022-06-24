@@ -1,0 +1,2 @@
+ip do servidor = 34.125.171.55
+senha do mysql = SUA_SENHA_FORTE
