@@ -1,5 +1,4 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _Patient = require('../models/Patient'); var _Patient2 = _interopRequireDefault(_Patient);
-var _specialty = require('../models/specialty'); var _specialty2 = _interopRequireDefault(_specialty);
 
 class PatientController {
   async store(req, res) {
@@ -14,14 +13,7 @@ class PatientController {
 
   async index(req, res) {
     try {
-      const patients = await _Patient2.default.findAll({
-        attributes: ['id', 'name', 'date_birth', 'mom', 'cpf', 'telephone'],
-        order: [['id', 'ASC']],
-        include: {
-          model: _specialty2.default,
-          attributes: ['doctor', 'address', 'telephone', 'notes'],
-        },
-      });
+      const patients = await _Patient2.default.findAll();
       return res.json(patients);
     } catch (e) {
       return res.status(400).json({ e });
@@ -31,12 +23,8 @@ class PatientController {
   async show(req, res) {
     try {
       const patient = await _Patient2.default.findByPk(req.params.id, {
-        attributes: ['id', 'name', 'date_birth', 'mom', 'cpf', 'telephone'],
+        attributes: ['id', 'name', 'birthDate', 'nameMom', 'cpf', 'telephone'],
         order: [['id', 'ASC']],
-        include: {
-          model: _specialty2.default,
-          attributes: ['doctor', 'address', 'telephone', 'notes'],
-        },
       });
       return res.json(patient);
     } catch (e) {

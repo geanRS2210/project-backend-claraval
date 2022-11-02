@@ -9,7 +9,7 @@ export default class Operator extends Model {
         type: Sequelize.STRING,
         defaultValue: '',
         unique: {
-          msg: 'Médico já existe, favor cadastra outro médico!',
+          msg: 'Médico já existe, favor cadastra outro nome de usuário!',
         },
         validate: {
           len: {

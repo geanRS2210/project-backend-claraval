@@ -1,5 +1,4 @@
 import Patient from '../models/Patient';
-import Speciality from '../models/specialty';
 
 class PatientController {
   async store(req, res) {
@@ -14,14 +13,7 @@ class PatientController {
 
   async index(req, res) {
     try {
-      const patients = await Patient.findAll({
-        attributes: ['id', 'name', 'date_birth', 'mom', 'cpf', 'telephone'],
-        order: [['id', 'ASC']],
-        include: {
-          model: Speciality,
-          attributes: ['doctor', 'address', 'telephone', 'notes'],
-        },
-      });
+      const patients = await Patient.findAll();
       return res.json(patients);
     } catch (e) {
       return res.status(400).json({ e });
@@ -31,12 +23,8 @@ class PatientController {
   async show(req, res) {
     try {
       const patient = await Patient.findByPk(req.params.id, {
-        attributes: ['id', 'name', 'date_birth', 'mom', 'cpf', 'telephone'],
+        attributes: ['id', 'name', 'birthDate', 'nameMom', 'cpf', 'telephone'],
         order: [['id', 'ASC']],
-        include: {
-          model: Speciality,
-          attributes: ['doctor', 'address', 'telephone', 'notes'],
-        },
       });
       return res.json(patient);
     } catch (e) {

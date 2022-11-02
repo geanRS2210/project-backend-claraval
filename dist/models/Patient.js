@@ -14,7 +14,7 @@
           },
         },
       },
-      date_birth: {
+      birthDate: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
         validate: {
@@ -25,25 +25,19 @@
           },
         },
       },
-      mom: {
+      nameMom: {
         type: _sequelize2.default.INTEGER,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo nome da mãe não pode ficar em branco!!',
-        },
       },
       cpf: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo cpf não pode ficar em branco!!',
-        },
       },
       address: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
       },
-      number: {
+      state: {
         type: _sequelize2.default.INTEGER,
         defaultValue: '',
       },
@@ -56,24 +50,26 @@
           msg: 'telephone incorreto!',
         },
       },
-      date_marked: {
-        type: _sequelize2.default.INTEGER,
-      },
-      hour_marked: {
-        type: _sequelize2.default.INTEGER,
-      },
-      status: {
+      appointmeintDate: {
         type: _sequelize2.default.STRING,
-        defaultValue: 'awating',
+        defaultValue: '',
+      },
+      doctor: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
+      },
+      value: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '200,00',
+      },
+      rg: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
       },
     }, {
       sequelize,
       tableName: 'patients',
     });
     return this;
-  }
-
-  static associate(models) {
-    this.belongsTo(models.Speciality, { foreignKey: 'specialty_id' });
   }
 } exports.default = Patient;

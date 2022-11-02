@@ -14,7 +14,7 @@ export default class Patient extends Model {
           },
         },
       },
-      date_birth: {
+      birthDate: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
@@ -25,25 +25,19 @@ export default class Patient extends Model {
           },
         },
       },
-      mom: {
+      nameMom: {
         type: Sequelize.INTEGER,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo nome da mãe não pode ficar em branco!!',
-        },
       },
       cpf: {
         type: Sequelize.STRING,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo cpf não pode ficar em branco!!',
-        },
       },
       address: {
         type: Sequelize.STRING,
         defaultValue: '',
       },
-      number: {
+      state: {
         type: Sequelize.INTEGER,
         defaultValue: '',
       },
@@ -56,24 +50,26 @@ export default class Patient extends Model {
           msg: 'telephone incorreto!',
         },
       },
-      date_marked: {
-        type: Sequelize.INTEGER,
-      },
-      hour_marked: {
-        type: Sequelize.INTEGER,
-      },
-      status: {
+      appointmeintDate: {
         type: Sequelize.STRING,
-        defaultValue: 'awating',
+        defaultValue: '',
+      },
+      doctor: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+      },
+      value: {
+        type: Sequelize.STRING,
+        defaultValue: '200,00',
+      },
+      rg: {
+        type: Sequelize.STRING,
+        defaultValue: '',
       },
     }, {
       sequelize,
       tableName: 'patients',
     });
     return this;
-  }
-
-  static associate(models) {
-    this.belongsTo(models.Speciality, { foreignKey: 'specialty_id' });
   }
 }

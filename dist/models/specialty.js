@@ -29,8 +29,8 @@
         },
       },
       number: {
-        type: _sequelize2.default.INTEGER,
-        defaultValue: '',
+        type: _sequelize2.default.STRING,
+        defaultValue: 'SN',
       },
       telephone: {
         type: _sequelize2.default.STRING,
@@ -39,7 +39,18 @@
           notEmpty: 'campo telefone não pode ficar em branco!!',
         },
       },
-      notes: {
+      whatsapp: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
+        validate: {
+          notEmpty: 'campo telefone não pode ficar em branco!!',
+        },
+      },
+      localPay: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
+      },
+      comments: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
       },
@@ -55,9 +66,5 @@
       tableName: 'specialty',
     });
     return this;
-  }
-
-  static associate(models) {
-    this.hasMany(models.Patient, { foreignKey: 'specialty_id' });
   }
 } exports.default = Speciality;

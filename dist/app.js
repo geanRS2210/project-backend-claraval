@@ -13,7 +13,7 @@ var _loginRouts = require('./routers/loginRouts'); var _loginRouts2 = _interopRe
 var _patientRouts = require('./routers/patientRouts'); var _patientRouts2 = _interopRequireDefault(_patientRouts);
 
 const corsOptions = {
-  origin: true,
+  origin: 'http://localhost:3000',
   methods: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true,
   maxAge: 3600,

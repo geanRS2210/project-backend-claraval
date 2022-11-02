@@ -9,7 +9,7 @@ export default async function Authorization(req, res, next) {
   const token = authorization.split(' ');
   try {
     const dados = jwt.verify(token[1], process.env.TOKEN_SECRET);
-    const { id, user} = dados;
+    const { id, user } = dados;
     req.userId = id;
     req.userName = user;
     const userModify = await Operator.findOne({

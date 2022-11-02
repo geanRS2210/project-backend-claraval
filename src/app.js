@@ -13,7 +13,7 @@ import loginRouts from './routers/loginRouts';
 import patientRouts from './routers/patientRouts';
 
 const corsOptions = {
-  origin: true,
+  origin: 'http://localhost:3000',
   methods: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true,
   maxAge: 3600,

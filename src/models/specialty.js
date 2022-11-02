@@ -29,8 +29,8 @@ export default class Speciality extends Model {
         },
       },
       number: {
-        type: Sequelize.INTEGER,
-        defaultValue: '',
+        type: Sequelize.STRING,
+        defaultValue: 'SN',
       },
       telephone: {
         type: Sequelize.STRING,
@@ -39,7 +39,18 @@ export default class Speciality extends Model {
           notEmpty: 'campo telefone não pode ficar em branco!!',
         },
       },
-      notes: {
+      whatsapp: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+        validate: {
+          notEmpty: 'campo telefone não pode ficar em branco!!',
+        },
+      },
+      localPay: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+      },
+      comments: {
         type: Sequelize.STRING,
         defaultValue: '',
       },
@@ -55,9 +66,5 @@ export default class Speciality extends Model {
       tableName: 'specialty',
     });
     return this;
-  }
-
-  static associate(models) {
-    this.hasMany(models.Patient, { foreignKey: 'specialty_id' });
   }
 }

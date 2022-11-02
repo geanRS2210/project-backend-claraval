@@ -11,47 +11,45 @@
         type: Sequelize.STRING,
         allowNull: false,
       },
-      date_birth: {
+      birthDate: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      mom: {
+      nameMom: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       cpf: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
+      },
+      state: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
       },
       address: {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      Number: {
+      telephone: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      doctor: {
         type: Sequelize.INTEGER,
         allowNull: true,
       },
-      date_marked: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      hour_marked: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      status: {
+      rg: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      specialty_id: {
+      appointmeintDate: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      value: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        references: {
-          model: 'specialty',
-          key: 'id',
-        },
-        onDelete: 'SET NULL',
-        onUpdate: 'CASCADE',
       },
       createdAt: {
         allowNull: false,

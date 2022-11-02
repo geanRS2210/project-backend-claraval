@@ -9,7 +9,7 @@ var _Operator = require('../models/Operator'); var _Operator2 = _interopRequireD
   const token = authorization.split(' ');
   try {
     const dados = _jsonwebtoken2.default.verify(token[1], process.env.TOKEN_SECRET);
-    const { id, user} = dados;
+    const { id, user } = dados;
     req.userId = id;
     req.userName = user;
     const userModify = await _Operator2.default.findOne({

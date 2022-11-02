@@ -9,7 +9,7 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
         type: _sequelize2.default.STRING,
         defaultValue: '',
         unique: {
-          msg: 'Médico já existe, favor cadastra outro médico!',
+          msg: 'Médico já existe, favor cadastra outro nome de usuário!',
         },
         validate: {
           len: {

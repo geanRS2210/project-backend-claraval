@@ -17,13 +17,25 @@
       },
       number: {
         type: Sequelize.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
       telephone: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      notes: {
+      specialty: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      whatsapp: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      localPay: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      comment: {
         type: Sequelize.STRING,
         allowNull: true,
       },
