@@ -4,7 +4,7 @@ var _Operator = require('../models/Operator'); var _Operator2 = _interopRequireD
  async function Authorization(req, res, next) {
   const { authorization } = req.headers;
   if (!authorization) {
-    return res.json(['Operador não logado']);
+    return res.status(401).json({ errorAuth: 'Operador não logado' });
   }
   const token = authorization.split(' ');
   try {
@@ -19,7 +19,7 @@ var _Operator = require('../models/Operator'); var _Operator2 = _interopRequireD
       },
     });
     if (!userModify) {
-      return res.json(['Usuario modificado']);
+      return res.json({ errorAuth: 'Usuário modificado!!' });
     }
   } catch (e) {
     return res.json([e]);

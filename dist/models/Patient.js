@@ -26,7 +26,7 @@
         },
       },
       nameMom: {
-        type: _sequelize2.default.INTEGER,
+        type: _sequelize2.default.STRING,
         defaultValue: '',
       },
       cpf: {
@@ -38,7 +38,7 @@
         defaultValue: '',
       },
       state: {
-        type: _sequelize2.default.INTEGER,
+        type: _sequelize2.default.STRING,
         defaultValue: '',
       },
       telephone: {
@@ -54,6 +54,10 @@
         type: _sequelize2.default.STRING,
         defaultValue: '',
       },
+      hour: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
+      },
       doctor: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
@@ -64,7 +68,7 @@
       },
       rg: {
         type: _sequelize2.default.STRING,
-        defaultValue: '',
+        defaultValue: 'Não informado',
       },
     }, {
       sequelize,

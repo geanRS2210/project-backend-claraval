@@ -9,7 +9,7 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
         type: _sequelize2.default.STRING,
         defaultValue: '',
         unique: {
-          msg: 'Médico já existe, favor cadastra outro nome de usuário!',
+          msg: 'Usuário já existe, favor cadastra outro nome de usuário!',
         },
         validate: {
           len: {
@@ -27,6 +27,10 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
             msg: 'Senha deve conter entre 4 e 25 caracteres.',
           },
         },
+      },
+      state: {
+        type: _sequelize2.default.STRING,
+        defaultValue: 'valid',
       },
       level: {
         type: _sequelize2.default.STRING,

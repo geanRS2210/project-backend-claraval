@@ -42,9 +42,6 @@ export default class Speciality extends Model {
       whatsapp: {
         type: Sequelize.STRING,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo telefone não pode ficar em branco!!',
-        },
       },
       localPay: {
         type: Sequelize.STRING,

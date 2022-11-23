@@ -14,22 +14,17 @@ class OperatorController {
 
   async index(req, res) {
     try {
-      const specialties = await _specialty2.default.findAll({
-        attributes: ['id', 'doctor', 'address', 'telephone', 'comments'],
-        order: [['id', 'ASC']],
-      });
+      const specialties = await _specialty2.default.findAll();
       return res.json(specialties);
     } catch (e) {
+      console.log(e);
       return res.status(400).json({ e });
     }
   }
 
   async show(req, res) {
     try {
-      const specialty = await _specialty2.default.findByPk(req.params.id, {
-        attributes: ['doctor', 'address', 'telephone', 'comments'],
-        order: [['id', 'ASC']],
-      });
+      const specialty = await _specialty2.default.findByPk(req.params.id);
       return res.json(specialty);
     } catch (e) {
       return res.status(400).json({ e });
@@ -38,11 +33,13 @@ class OperatorController {
 
   async update(req, res) {
     try {
+      console.log(req.params.id);
       const specialty = await _specialty2.default.findByPk(req.params.id);
       if (!specialty) return res.status(400).json('Medico não encontrado');
       const newspecialty = await specialty.update(req.body);
       return res.json(newspecialty);
     } catch (e) {
+      console.log(e);
       return res.status(400).json({ e });
     }
   }

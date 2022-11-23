@@ -9,7 +9,7 @@ export default class Operator extends Model {
         type: Sequelize.STRING,
         defaultValue: '',
         unique: {
-          msg: 'Médico já existe, favor cadastra outro nome de usuário!',
+          msg: 'Usuário já existe, favor cadastra outro nome de usuário!',
         },
         validate: {
           len: {
@@ -27,6 +27,10 @@ export default class Operator extends Model {
             msg: 'Senha deve conter entre 4 e 25 caracteres.',
           },
         },
+      },
+      state: {
+        type: Sequelize.STRING,
+        defaultValue: 'valid',
       },
       level: {
         type: Sequelize.STRING,

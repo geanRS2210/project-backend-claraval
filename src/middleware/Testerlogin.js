@@ -4,7 +4,7 @@ import Operator from '../models/Operator';
 export default async function Authorization(req, res, next) {
   const { authorization } = req.headers;
   if (!authorization) {
-    return res.json(['Operador não logado']);
+    return res.status(401).json({ errorAuth: 'Operador não logado' });
   }
   const token = authorization.split(' ');
   try {
@@ -19,7 +19,7 @@ export default async function Authorization(req, res, next) {
       },
     });
     if (!userModify) {
-      return res.json(['Usuario modificado']);
+      return res.json({ errorAuth: 'Usuário modificado!!' });
     }
   } catch (e) {
     return res.json([e]);

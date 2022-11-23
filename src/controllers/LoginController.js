@@ -11,10 +11,10 @@ class LoginController {
       });
       console.log(operator);
       if (!operator) {
-        return res.json({ errors: 'Usuario inválido' });
+        return res.status(400).json({ errors: 'Usuario inválido' });
       }
       if (!(await Operator.passwordIsValid(password, operator))) {
-        return res.json({ errors: 'Senha inválida' });
+        return res.status(400).json({ errors: 'Senha inválida' });
       }
       const { id, level } = operator;
       const token = jwt.sign({ id, user }, process.env.TOKEN_SECRET, {

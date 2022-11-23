@@ -15,10 +15,7 @@ class OperatorController {
 
   async index(req, res) {
     try {
-      const operators = await Operator.findAll({
-        attributes: ['id', 'user', 'level'],
-        order: [['id', 'ASC']],
-      });
+      const operators = await Operator.findAll();
       return res.json(operators);
     } catch (e) {
       return res.status(400).json({ e });
@@ -27,10 +24,7 @@ class OperatorController {
 
   async show(req, res) {
     try {
-      const operator = await Operator.findByPk(req.params.id, {
-        attributes: ['id', 'user', 'level'],
-        order: [['id', 'ASC']],
-      });
+      const operator = await Operator.findByPk(req.params.id);
       return res.json(operator);
     } catch (e) {
       return res.status(400).json({ e });

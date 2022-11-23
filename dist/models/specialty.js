@@ -42,9 +42,6 @@
       whatsapp: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
-        validate: {
-          notEmpty: 'campo telefone não pode ficar em branco!!',
-        },
       },
       localPay: {
         type: _sequelize2.default.STRING,

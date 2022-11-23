@@ -26,7 +26,7 @@ export default class Patient extends Model {
         },
       },
       nameMom: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         defaultValue: '',
       },
       cpf: {
@@ -38,7 +38,7 @@ export default class Patient extends Model {
         defaultValue: '',
       },
       state: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         defaultValue: '',
       },
       telephone: {
@@ -54,6 +54,10 @@ export default class Patient extends Model {
         type: Sequelize.STRING,
         defaultValue: '',
       },
+      hour: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+      },
       doctor: {
         type: Sequelize.STRING,
         defaultValue: '',
@@ -64,7 +68,7 @@ export default class Patient extends Model {
       },
       rg: {
         type: Sequelize.STRING,
-        defaultValue: '',
+        defaultValue: 'Não informado',
       },
     }, {
       sequelize,

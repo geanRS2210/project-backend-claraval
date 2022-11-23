@@ -22,10 +22,7 @@ class PatientController {
 
   async show(req, res) {
     try {
-      const patient = await Patient.findByPk(req.params.id, {
-        attributes: ['id', 'name', 'birthDate', 'nameMom', 'cpf', 'telephone'],
-        order: [['id', 'ASC']],
-      });
+      const patient = await Patient.findByPk(req.params.id);
       return res.json(patient);
     } catch (e) {
       return res.status(400).json({ e });
